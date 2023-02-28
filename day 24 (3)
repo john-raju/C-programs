@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <math.h>
+
+int is_armstrong(int num) {
+    int sum = 0, temp = num, digit_count = 0;
+    while (temp != 0) {
+        digit_count++;
+        temp /= 10;
+    }
+    temp = num;
+    while (temp != 0) {
+        int digit = temp % 10;
+        sum += pow(digit, digit_count);
+        temp /= 10;
+    }
+    return sum == num;
+}
+
+int main() {
+    int lower, upper;
+    printf("Enter the lower bound of the range: ");
+    scanf("%d", &lower);
+    printf("Enter the upper bound of the range: ");
+    scanf("%d", &upper);
+    printf("Armstrong numbers between %d and %d are: ", lower, upper);
+    for (int i = lower; i <= upper; i++) {
+        if (is_armstrong(i)) {
+            printf("%d ", i);
+        }
+    }
+    return 0;
+}
