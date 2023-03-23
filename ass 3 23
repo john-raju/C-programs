@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+struct Employee {
+    int id;
+    char name[50];
+    struct Date {
+        int day;
+        int month;
+        int year;
+    } dob;
+    float salary;
+};
+
+int main() {
+    struct Employee emp1 = {1, "John Raju S", {28, 9 , 2004}, 50000.0};
+
+    printf("Employee ID: %d\n", emp1.id);
+    printf("Name: %s\n", emp1.name);
+    printf("Date of Birth: %d/%d/%d\n", emp1.dob.day, emp1.dob.month, emp1.dob.year);
+    printf("Salary: %.2f\n", emp1.salary);
+    
+    return 0;
+}
