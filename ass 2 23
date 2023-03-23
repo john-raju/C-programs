@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+struct Student {
+    int id;
+    char name[50];
+    int m1, m2, m3;
+};
+
+int main() {
+
+    struct Student student1 = {1, "John Raju S", 98, 90, 95};
+    int total = student1.m1 + student1.m2 + student1.m3;
+    float avg = total / 3.0;
+    
+
+    printf("Student ID: %d\n", student1.id);
+    printf("Name: %s\n", student1.name);
+    printf("Marks: %d, %d, %d\n", student1.m1, student1.m2, student1.m3);
+    printf("Total Marks: %d\n", total);
+    printf("Average Marks: %.2f\n", avg);
+    
+    return 0;
+}
